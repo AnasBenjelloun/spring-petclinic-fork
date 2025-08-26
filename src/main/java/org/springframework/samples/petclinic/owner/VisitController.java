@@ -60,7 +60,7 @@ class VisitController {
 	 * @return Pet
 	 */
 	@ModelAttribute("visit")
-	public Visit loadPetWithVisit(@PathVariable("ownerId") int ownerId, @PathVariable("petId") int petId,
+	public Visit loadPetWithVisit(int ownerId, @PathVariable("petId") int petId,
 			Map<String, Object> model) {
 		Optional<Owner> optionalOwner = owners.findById(ownerId);
 		Owner owner = optionalOwner.orElseThrow(() -> new IllegalArgumentException(
